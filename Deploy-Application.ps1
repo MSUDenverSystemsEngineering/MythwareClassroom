@@ -56,15 +56,15 @@ Try {
 	##* VARIABLE DECLARATION
 	##*===============================================
 	## Variables: Application
-	[string]$appVendor = ''
-	[string]$appName = ''
-	[string]$appVersion = ''
-	[string]$appArch = ''
+	[string]$appVendor = 'Planet Tech Ed'
+	[string]$appName = 'Mythware Classroom Management Software'
+	[string]$appVersion = '2.7.13542'
+	[string]$appArch = 'x86'
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
 	[string]$appScriptVersion = '1.0.0'
-	[string]$appScriptDate = '06/12/2017'
-	[string]$appScriptAuthor = '<author name>'
+	[string]$appScriptDate = '01/11/2018'
+	[string]$appScriptAuthor = 'Truong Nguyen'
 	##*===============================================
 	## Variables: Install Titles (Only set here to override defaults set by the toolkit)
 	[string]$installName = ''
@@ -112,7 +112,7 @@ Try {
 		[string]$installPhase = 'Pre-Installation'
 
 		## Show Welcome Message, close applications if required, verify there is enough disk space to complete the install, and persist the prompt
-		Show-InstallationWelcome -CloseApps 'iexplore' -CheckDiskSpace -PersistPrompt
+		Show-InstallationWelcome -CheckDiskSpace -PersistPrompt
 
 		## Show Progress Message (with the default message)
 		Show-InstallationProgress
@@ -132,7 +132,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-
+		Execute-Process -Path "$dirFiles\Student_2.7.13542.exe" -Parameters "/silent /autoremoveold /runbyreg"
 
 		##*===============================================
 		##* POST-INSTALLATION
@@ -152,7 +152,7 @@ Try {
 		[string]$installPhase = 'Pre-Uninstallation'
 
 		## Show Welcome Message, close applications with a 60 second countdown before automatically closing
-		Show-InstallationWelcome -CloseApps 'iexplore' -CloseAppsCountdown 60
+		#Show-InstallationWelcome -CloseApps 'iexplore' -CloseAppsCountdown 60
 
 		## Show Progress Message (with the default message)
 		Show-InstallationProgress
@@ -172,7 +172,7 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-
+		Execute-Process -Path "C:\Program Files (x86)\Mythware\Classroom Management by Mythware\unins000.exe" -Parameter "/silent"
 
 		##*===============================================
 		##* POST-UNINSTALLATION
