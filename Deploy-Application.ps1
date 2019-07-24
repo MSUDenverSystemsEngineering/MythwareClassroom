@@ -65,12 +65,12 @@ Try {
 	## Variables: Application
 	[string]$appVendor = 'Planet Tech Ed'
 	[string]$appName = 'Mythware Classroom Management Software'
-	[string]$appVersion = '2.7.13542'
+	[string]$appVersion = '2.7.13788'
 	[string]$appArch = 'x86'
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
 	[string]$appScriptVersion = '3.7.0.1'
-	[string]$appScriptDate = '08/08/2018'
+	[string]$appScriptDate = '07/24/2019'
 	[string]$appScriptAuthor = 'MSU Denver'
 	##*===============================================
 	## Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -139,7 +139,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-		Execute-Process -Path "$dirFiles\Student_2.7.13542.exe" -Parameters "/silent /autoremoveold /runbyreg"
+		Execute-Process -Path "$dirFiles\Student_2.7.13788.exe" -Parameters "/silent /autoremoveold /runbyreg"
 
 		##*===============================================
 		##* POST-INSTALLATION
